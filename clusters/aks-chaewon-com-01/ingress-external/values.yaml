@@ -433,7 +433,6 @@ controller:
     create: true
 
     ## The type of service to create for the Ingress Controller.
-    loadBalancerIP: 20.196.104.72
     type: LoadBalancer
 
     ## The externalTrafficPolicy of the service. The value Local preserves the client source IP.
