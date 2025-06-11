@@ -562,7 +562,7 @@ controller:
 
   readyStatus:
     ## Enables readiness endpoint "/nginx-ready". The endpoint returns a success code when NGINX has loaded all the config after startup.
-    enable: true
+    enable: false
 
     ## Set the port where the readiness endpoint is exposed.
     port: 8081
