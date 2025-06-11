@@ -440,6 +440,8 @@ controller:
 
     ## The annotations of the Ingress Controller service.
     annotations:
+      # 내부 전용 LoadBalancer 생성
+      service.beta.kubernetes.io/azure-load-balancer-internal: "true"
       service.beta.kubernetes.io/azure-load-balancer-health-probe-request-path: /healthz
 
     ## The extra labels of the service.
