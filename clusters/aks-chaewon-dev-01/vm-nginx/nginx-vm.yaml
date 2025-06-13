@@ -8,7 +8,7 @@ spec:
   template:
     metadata:
       labels:
-        kubevirt.io/domain: nginx-VM
+        kubevirt.io/domain: nginx-vm
     spec:
       domain:
         devices:
