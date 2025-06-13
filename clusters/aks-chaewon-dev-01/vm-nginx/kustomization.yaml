@@ -1,5 +1,3 @@
 resources:
 - nginx-vm.yaml
 - namespace.yaml
-
-namespace: vm
