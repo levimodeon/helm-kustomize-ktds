@@ -169,6 +169,7 @@ configs:
   cm:
     # -- Create the argocd-cm configmap for [declarative setup]
     create: true
+    kustomize.buildOptions: --enable-helm
 
     # -- Annotations to be added to argocd-cm configmap
     annotations: {}
@@ -2376,7 +2377,7 @@ server:
 
     # -- Argo CD server hostname
     # @default -- `""` (defaults to global.domain)
-    hostname: "argocd.20.214.210.140.nip.io"
+    hostname: "argocd.4.217.130.205.nip.io"
 
     # -- The path to Argo CD server
     path: /
