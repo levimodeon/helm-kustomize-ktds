@@ -2399,14 +2399,14 @@ server:
     # -- Additional ingress paths
     # @default -- `[]` (See [values.yaml])
     ## Note: Supports use of custom Helm templates
-    extraPaths:
-      - path: /
-        pathType: Prefix
-        backend:
-          service:
-            name: argocd-server
-            port:
-              number: 80
+    extraPaths: []
+      # - path: /
+      #   pathType: Prefix
+      #   backend:
+      #     service:
+      #       name: argocd-server
+      #       port:
+      #         number: 80
 
     # -- Additional ingress rules
     # @default -- `[]` (See [values.yaml])
