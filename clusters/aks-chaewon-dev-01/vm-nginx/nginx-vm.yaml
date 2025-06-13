@@ -1,0 +1,39 @@
+apiVersion: kubevirt.io/v1
+kind: VirtualMachine
+metadata:
+  name: nginx-vm
+spec:
+  running: true # VM 생성하자마자 자동 시작
+  template:
+    metadata:
+      labels:
+        kubevirt.io/domain: nginx-VM
+    spec:
+      domain:
+        devices:
+          disks:
+          - name: rootdisk
+            disk: 
+              bus: virtio 
+          - name: cloudinitdisk
+            disk: 
+              bus: virtio
+        resources:
+          requests:
+            memory: 1Gi
+            cpu: "1"
+      volumes:
+        - name: rootdisk
+          containerDisk: # 부팅할 때, 사용할 이미지
+            image: quay.io/containerdisks/ubuntu:22.04
+        - name: cloudinitdisk
+          cloudInitNoCloud: # VM 부팅 시 초기 설정 정의
+            userData: |
+              #cloud-config
+              hostname: nginx-vm
+              runcmd:
+                - apt update
+                - apt install -y nginx
+                - systemctl enable nginx
+                - systemctl start nginx          
+      
